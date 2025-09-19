@@ -57,15 +57,22 @@ document.getElementById("btnContagem").addEventListener("click", async () => {
 
 // Exercício 4: Tabuada de um número
 document.getElementById("btnTabuada").addEventListener("click", async () => {
-    let numeroTabuada = 7;
-    print(`\nTabuada do ${numeroTabuada}:`);
+    let numero = Number(prompt("Digite um número para ver sua tabuada:"));
+
+    if (isNaN(numero)) {
+        print("Você não digitou um número válido.");
+        return;
+    }
+
+    print(`\nTabuada de ${numero}:`);
     for (let i = 1; i <= 10; i++) {
-        print(`${numeroTabuada} x ${i} = ${numeroTabuada * i}`);
+        print(`${numero} x ${i} = ${numero * i}`);
         await sleep(100);
     }
 
     await sleep(500);
 });
+
 
 // Exercício 5: Contagem regressiva de 10 até 1
 document.getElementById("btnContagemRegressiva").addEventListener("click", async () => {
